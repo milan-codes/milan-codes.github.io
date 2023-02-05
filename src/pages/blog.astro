@@ -1,0 +1,11 @@
+---
+import BlogPostCard from "../components/BlogPostCard.svelte";
+import Navbar from "../components/Navbar.svelte";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("../pages/blog/*.md");
+---
+
+<BaseLayout title="Milán Herke - Blog">
+  <Navbar />
+  {allPosts.map((post) => <BlogPostCard post={post} />)}
+</BaseLayout>
