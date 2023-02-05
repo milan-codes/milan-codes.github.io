@@ -1,4 +1,4 @@
-<nav aria-label="Navigation bar" class="mx-auto flex max-w-lg items-center justify-between p-4">
+<nav aria-label="Navigation bar" class="flex items-center justify-between py-4">
   <a href="/" class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 font-semibold text-gray-500 hover:text-gray-700">
     <span class="sr-only">Logo</span> 👋
   </a>
