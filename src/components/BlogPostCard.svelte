@@ -1,15 +1,11 @@
 <script lang="ts">
-    export let post: any;
+    import { formattedPublishDate } from "../utils";
 
-    const formattedPublishDate = new Date(post.frontmatter.pubDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
+    export let post: any;
 </script>
 
 <div class="my-8">
-    <p class="text-gray-400 dark:text-gray-600 text-sm">{formattedPublishDate}</p>
+    <p class="text-gray-400 dark:text-gray-600 text-sm">{formattedPublishDate(post.frontmatter.pubDate)}</p>
         <a
             class="inline-flex items-center rounded-lg text-gray-900 dark:text-gray-100 hover:underline"
             href={post.url}
