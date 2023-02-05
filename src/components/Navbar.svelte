@@ -1,9 +1,9 @@
 <nav aria-label="Navigation bar" class="flex items-center justify-between py-4">
-  <a href="/" class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 font-semibold text-gray-500 hover:text-gray-700">
+  <a href="/" class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-900 font-semibold">
     <span class="sr-only">Logo</span> 👋
   </a>
 
-  <ul class="flex items-center gap-2 text-sm font-medium text-gray-900">
+  <ul class="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-100">
     <li>
       <a class="inline-flex items-center rounded-lg px-3 py-2 hover:underline" href="https://github.com/milan-codes" target="_blank" rel="noreferrer">
         GitHub
