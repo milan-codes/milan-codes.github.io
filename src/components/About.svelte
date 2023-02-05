@@ -1,5 +1,5 @@
 <div class="max-w-lg mx-auto px-4">
-    <div class="flex my-4">
+    <div class="flex my-8">
         <img
         alt="Paul Clapton"
         src="/memoji-mac.png"
