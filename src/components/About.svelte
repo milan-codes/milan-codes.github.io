@@ -1,8 +1,15 @@
 <div class="max-w-lg mx-auto px-4">
-    <div class="my-4">
-        <h1 class="text-xl text-gray-900 tracking-wider">Milán Herke</h1>
-        <h1 class="text-gray-600">Software engineer</h1>
-        <h1 class="text-sm text-gray-400">hi@milanherke.dev</h1>
+    <div class="flex my-4">
+        <img
+        alt="Paul Clapton"
+        src="/memoji-mac.png"
+        class="h-16 w-16 rounded-lg object-cover mr-4"
+        />
+        <div>
+            <h1 class="text-xl text-gray-900 tracking-wider">Milán Herke</h1>
+            <h1 class="text-gray-600">Software engineer</h1>
+            <h1 class="text-sm text-gray-400">hi@milanherke.dev</h1>
+        </div>
     </div>
     <div class="my-8">
         <h1 class="text-gray-900 mb-2 tracking-wider">About</h1>
