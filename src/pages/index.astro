@@ -1,12 +1,16 @@
 ---
 import About from "../components/About.svelte";
 import Navbar from "../components/Navbar.svelte";
+import Popup from "../components/Popup.svelte";
 import Projects from "../components/Projects.svelte";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Test from "../components/Test.svelte";
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
   <Navbar />
   <About />
   <Projects />
+  <Popup text="Currently looking for entry level positions 🌍" href="blank"/>
+  <Test />
 </BaseLayout>
