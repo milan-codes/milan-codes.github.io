@@ -2,11 +2,6 @@
     export let text: string;
     export let href: string;
     export let visible: boolean = true;
-
-    function hidePopup() {
-        visible = false;
-        alert("hide");
-    }
 </script>
 
 {#if visible}
@@ -25,7 +20,7 @@
 
     <button
         class="rounded bg-black/50 dark:bg-black/10 p-1 hover:bg-black/30 dark:hover:bg-black/20"
-        on:click={hidePopup}
+        on:click={() => (visible = false)}
     >
     <span class="sr-only">Close</span>
     <svg
