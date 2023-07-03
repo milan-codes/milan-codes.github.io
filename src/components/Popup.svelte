@@ -7,7 +7,7 @@
 {#if visible}
 <div
     
-    class="sticky bottom-4 z-50 flex items-center justify-center gap-4 rounded-lg dark:bg-gray-100 bg-gray-900 px-5 py-3 dark:text-gray-900 text-gray-100"
+    class="sticky bottom-4 z-50 flex items-center justify-between gap-4 rounded-lg dark:bg-gray-100 bg-gray-900 px-5 py-3 dark:text-gray-900 text-gray-100"
 >
     <a
     href={href}
