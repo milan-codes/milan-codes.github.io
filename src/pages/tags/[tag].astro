@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.svelte";
+import BlogPostCard from "../../components/BlogPostCard.svelte";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../blog/*.md");
+  const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+  const uniqueTags = new Set();
+  nonDraftPosts.forEach((post) => {
+    post.frontmatter.tags.forEach((tag) => {
+      uniqueTags.add(tag);
+    });
+  });
+
+  return Array.from(uniqueTags).map((tag) => ({
+    params: { tag },
+  }));
+}
+
+const { tag } = Astro.params;
+const allPosts = await Astro.glob("../blog/*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const taggedPosts = nonDraftPosts.filter((post) => post.frontmatter.tags.includes(tag));
+---
+
+<BaseLayout title="Milán Herke - Blog">
+  <Navbar />
+  <h1 class="my-8 text-gray-900 dark:text-gray-100 mb-2 tracking-wider">Posts with {tag} tag</h1>
+  {taggedPosts.map((post) => <BlogPostCard post={post} />)}
+</BaseLayout>
