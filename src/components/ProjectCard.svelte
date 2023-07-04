@@ -12,7 +12,7 @@
     </a>
     <div>
         <p class="text-gray-600 dark:text-gray-400">{projectDescription}</p>
-        <ul class="flex">
+        <ul class="flex flex-wrap">
             {#each projectTags as tag}
                 <li class="text-gray-400 dark:text-gray-600 text-sm font-medium">{tag + "/"}</li>
             {/each}
