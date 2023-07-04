@@ -1,7 +1,7 @@
 <div>
     <div class="flex my-8">
         <img
-        alt="Paul Clapton"
+        alt="Milán Herke"
         src="/memoji-mac.png"
         class="h-16 w-16 rounded-lg object-cover mr-4"
         />
