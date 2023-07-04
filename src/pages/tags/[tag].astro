@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
   const uniqueTags = new Set();
   nonDraftPosts.forEach((post) => {
-    post.frontmatter.tags.forEach((tag) => {
+    post.frontmatter.tags.forEach((tag: string) => {
       uniqueTags.add(tag);
     });
   });

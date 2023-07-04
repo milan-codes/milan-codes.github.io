@@ -4,11 +4,16 @@ import Navbar from "../components/Navbar.svelte";
 import Popup from "../components/Popup.svelte";
 import Projects from "../components/Projects.svelte";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import LatestBlogPost from "../components/LatestBlogPost.svelte";
+
+const allPosts = await Astro.glob("./blog/*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
   <Navbar />
   <About />
+  <LatestBlogPost post={nonDraftPosts[0]} />
   <Projects />
   <Popup
     text="👨‍💻 Currently looking for entry level positions"

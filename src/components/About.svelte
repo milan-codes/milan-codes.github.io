@@ -8,7 +8,7 @@
         <div>
             <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">Milán Herke</h1>
             <h1 class="text-gray-600 dark:text-gray-400">Software engineer</h1>
-            <h1 class="text-sm text-gray-400 dark:text-gray-600"><a href="mailto:milanherke@protonmail.com">milanherke@protonmail.com</a></h1>
+            <h1 class="text-sm text-gray-400 dark:text-gray-600 hover:underline"><a href="mailto:milanherke@protonmail.com" class="inline-flex items-center">milanherke@protonmail.com <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a></h1>
         </div>
     </div>
     <div class="my-8">

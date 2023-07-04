@@ -2,9 +2,10 @@
     import { formattedPublishDate } from "../utils";
 
     export let post: any;
+    export let containerStyleOverride: string | null = null;
 </script>
 
-<div class="my-8">
+<div class={containerStyleOverride ?? "my-8"}>
     <p class="text-gray-400 dark:text-gray-600 text-sm">{formattedPublishDate(post.frontmatter.pubDate)}</p>
         <a
             class="inline-flex items-center rounded-lg text-gray-900 dark:text-gray-100 hover:underline"
