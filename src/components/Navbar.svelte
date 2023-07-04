@@ -1,15 +1,28 @@
-<nav aria-label="Navigation bar" class="mx-auto flex max-w-lg items-center justify-between p-4">
-  <a href="/" class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 font-semibold text-gray-500 hover:text-gray-700">
+<nav aria-label="Navigation bar" class="flex items-center justify-between py-4">
+  <a href="/" class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-900 font-semibold">
     <span class="sr-only">Logo</span> 👋
   </a>
 
-  <ul class="flex items-center gap-2 text-sm font-medium text-gray-500">
+  <ul class="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-100">
     <li>
-      <a class="inline-flex items-center rounded-lg px-3 py-2 hover:text-gray-700" href="https://github.com/milan-codes" target="_blank" rel="noreferrer">
+      <a class="px-3 py-2 hover:underline" href="/">
+        Home
+      </a>
+    </li>
+    <li>
+      <a class="px-3 py-2 hover:underline" href="/blog">
+        Blog
+      </a>
+    </li>
+    <li>
+      <a class="px-3 py-2 hover:underline" href="/tags">
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="inline-flex items-center pl-2 hover:underline" href="https://github.com/milan-codes" target="_blank" rel="noreferrer">
         GitHub
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-1.5 h-4 w-4">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
     </li>
   </ul>

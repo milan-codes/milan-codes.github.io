@@ -1,0 +1,19 @@
+---
+import BlogPost from "../components/BlogPost.svelte";
+import Navbar from "../components/Navbar.svelte";
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+    integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+    crossorigin="anonymous"
+  />
+  <Navbar />
+  <BlogPost frontmatter={frontmatter}>
+    <slot />
+  </BlogPost>
+</BaseLayout>

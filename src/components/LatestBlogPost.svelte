@@ -1,0 +1,13 @@
+<script lang="ts">
+  import BlogPostCard from "./BlogPostCard.svelte";
+  
+  export let post: any;
+</script>
+
+<div class="my-8">
+  <div class="flex justify-between">
+    <h1 class="text-gray-900 dark:text-gray-100 tracking-wider">Latest blog post</h1>
+    <a href="/blog" class="inline-flex items-center text-gray-400 dark:text-gray-600 text-sm hover:underline">See all <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+  </div>
+    <BlogPostCard post={post} containerStyleOverride="mt-2"/>
+</div>

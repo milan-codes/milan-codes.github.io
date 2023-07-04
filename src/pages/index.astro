@@ -1,10 +1,28 @@
 ---
 import About from "../components/About.svelte";
 import Navbar from "../components/Navbar.svelte";
-import Layout from "../layouts/Layout.astro";
+import Popup from "../components/Popup.svelte";
+import Projects from "../components/Projects.svelte";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LatestBlogPost from "../components/LatestBlogPost.svelte";
+
+const allPosts = await Astro.glob("./blog/*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const orderedPosts = nonDraftPosts.sort((a, b) => {
+  const aDate = new Date(a.frontmatter.pubDate);
+  const bDate = new Date(b.frontmatter.pubDate);
+  return bDate.valueOf() - aDate.valueOf();
+});
 ---
 
-<Layout title="Milán Herke - Software engineer">
+<BaseLayout title="Milán Herke - Software engineer">
   <Navbar />
   <About />
-</Layout>
+  <LatestBlogPost post={orderedPosts[0]} />
+  <Projects />
+  <Popup
+    text="👨‍💻 Currently looking for entry level positions"
+    href="/blog/internships"
+    client:load
+  />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.svelte";
+import Tags from "../../components/Tags.svelte";
+
+const allPosts = await Astro.glob("../blog/*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const uniqueTags = new Set<string>();
+nonDraftPosts.forEach((post) => {
+  post.frontmatter.tags.forEach((tag: string) => {
+    uniqueTags.add(tag);
+  });
+});
+---
+
+<BaseLayout title="Tags">
+  <Navbar />
+  <Tags tags={Array.from(uniqueTags)} />
+</BaseLayout>
