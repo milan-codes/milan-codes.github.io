@@ -8,7 +8,7 @@
         <div>
             <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">Milán Herke</h1>
             <h1 class="text-gray-600 dark:text-gray-400">Software engineer</h1>
-            <h1 class="text-sm text-gray-400 dark:text-gray-600">hi@milanherke.dev</h1>
+            <h1 class="text-sm text-gray-400 dark:text-gray-600"><a href="mailto:milanherke@protonmail.com">milanherke@protonmail.com</a></h1>
         </div>
     </div>
     <div class="my-8">
