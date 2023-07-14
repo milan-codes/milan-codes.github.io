@@ -1,8 +1,8 @@
 ---
-import BlogPostCard from "../components/BlogPostCard.svelte";
-import Navbar from "../components/Navbar.svelte";
-import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = await Astro.glob("../pages/blog/*.md");
+import BlogPostCard from "../../components/BlogPostCard.svelte";
+import Navbar from "../../components/Navbar.svelte";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("./*.md");
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 const orderedPosts = nonDraftPosts.sort((a, b) => {
   const aDate = new Date(a.frontmatter.pubDate);
@@ -13,5 +13,5 @@ const orderedPosts = nonDraftPosts.sort((a, b) => {
 
 <BaseLayout title="Milán Herke - Blog">
   <Navbar />
-  {nonDraftPosts.map((post) => <BlogPostCard post={post} />)}
+  {orderedPosts.map((post) => <BlogPostCard post={post} />)}
 </BaseLayout>
