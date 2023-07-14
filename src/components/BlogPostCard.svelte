@@ -18,6 +18,7 @@
         </a>
     <p class="text-gray-600 dark:text-gray-400">{post.frontmatter.description}</p>
     <ul class="flex flex-wrap">
+        <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm">{post.readingTime} min read</li>
         {#each post.frontmatter.tags as tag}
             <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm font-medium hover:underline"><a href={`/tags/${tag}`}>{`#${tag}`}</a></li>
         {/each}

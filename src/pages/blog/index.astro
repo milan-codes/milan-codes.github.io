@@ -1,0 +1,25 @@
+---
+import BlogPostCard from "../../components/BlogPostCard.svelte";
+import Navbar from "../../components/Navbar.svelte";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("./*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const orderedPosts = nonDraftPosts.sort((a, b) => {
+  const aDate = new Date(a.frontmatter.pubDate);
+  const bDate = new Date(b.frontmatter.pubDate);
+  return bDate.valueOf() - aDate.valueOf();
+});
+const postsWithReadingTime = orderedPosts.map((post) => {
+  const wordCount = post.rawContent().split(" ").length;
+  const readingTime = Math.ceil(wordCount / 200);
+  return {
+    ...post,
+    readingTime,
+  };
+});
+---
+
+<BaseLayout title="Milán Herke - Blog">
+  <Navbar />
+  {postsWithReadingTime.map((post) => <BlogPostCard post={post} />)}
+</BaseLayout>
