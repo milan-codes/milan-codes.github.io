@@ -32,7 +32,7 @@ This is my personal portfolio and blog template. It allows you to create blog po
 
 ### Analytics Integration with Plausible
 
-1. Sign up for a Plausible Analytics account at [Plausbile](https://plausible.io).
+1. Sign up for a Plausible Analytics account at [Plausible](https://plausible.io).
 2. After setting up your account, paste the given script in the `src/layouts/BaseLayout.astro` file, replacing the current one.
 
 ## Dependencies
