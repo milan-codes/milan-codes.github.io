@@ -8,6 +8,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 import partytown from "@astrojs/partytown";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +22,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: ["remark-math"],
+    remarkPlugins: ["remark-math", remarkReadingTime],
     rehypePlugins: ["rehype-katex"],
   },
 });

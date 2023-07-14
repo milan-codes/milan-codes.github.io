@@ -8,6 +8,7 @@
     <h1 class="text-sm text-gray-400 dark:text-gray-600 mt-8">{formattedPublishDate(frontmatter.pubDate)}</h1>
     <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">{frontmatter.title}</h1>
     <h1 class="text-gray-600 dark:text-gray-400">{frontmatter.description}</h1>
+    <h1 class="mt-1 text-sm text-gray-400 dark:text-gray-600">{frontmatter.minutesRead}</h1>
     <div class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8">
         <slot />
     </div>
