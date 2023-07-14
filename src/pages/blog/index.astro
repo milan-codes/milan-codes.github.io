@@ -9,9 +9,17 @@ const orderedPosts = nonDraftPosts.sort((a, b) => {
   const bDate = new Date(b.frontmatter.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
+const postsWithReadingTime = orderedPosts.map((post) => {
+  const wordCount = post.rawContent().split(" ").length;
+  const readingTime = Math.ceil(wordCount / 200);
+  return {
+    ...post,
+    readingTime,
+  };
+});
 ---
 
 <BaseLayout title="Milán Herke - Blog">
   <Navbar />
-  {orderedPosts.map((post) => <BlogPostCard post={post} />)}
+  {postsWithReadingTime.map((post) => <BlogPostCard post={post} />)}
 </BaseLayout>
