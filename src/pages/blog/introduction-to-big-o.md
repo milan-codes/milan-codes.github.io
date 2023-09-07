@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "A brief introduction to Big-O"
+title: 'A brief introduction to Big-O'
 pubDate: 2023-07-04
-description: "What do we mean by efficient algorithms? How does the runtime of an algorithm grows as its input size grows?"
-tags: ["big-o", "complexity-analysis"]
+description: 'What do we mean by efficient algorithms? How does the runtime of an algorithm grows as its input size grows?'
+tags: ['big-o', 'complexity-analysis']
 ---
 
 # Table Of Contents
@@ -99,7 +99,7 @@ def binarySearch(arr, x):
 ```
 
 Now let's take a look at its runtime, just like we did with linear search:
-![Binary search runtime](../../../assets/040723-big-o/binarySearchRuntime.png)
+![Binary search runtime](/assets/040723-big-o/binarySearchRuntime.png)
 
 You may have already noticed by looking at the y-axis that how much faster binary search is. It peaks a little bit above 0.1 ms — in comparison, linear search reached 250 ms with bigger sized arrays on my computer. Though, the most important difference is that the linear pattern is gone. This is replaced by a logarithmic one. That is because with each iteration, the algorithm halves the search region. You start with $n$ elements, then you get to $\frac{n}{2}$, then $\frac{n}{4}$ and so on, until you get to a problem the size of 1. This process can be described the following way:
 
