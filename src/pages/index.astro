@@ -13,6 +13,7 @@ const orderedPosts = nonDraftPosts.sort((a, b) => {
   const bDate = new Date(b.frontmatter.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
+const popupPost = orderedPosts.find((post) => post.frontmatter.popup);
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
@@ -20,4 +21,5 @@ const orderedPosts = nonDraftPosts.sort((a, b) => {
   <About />
   <LatestBlogPost post={orderedPosts[0]} />
   <Projects />
+  {popupPost && <Popup text={popupPost.frontmatter.description} href={popupPost.url} />}
 </BaseLayout>
