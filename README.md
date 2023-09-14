@@ -14,7 +14,7 @@ This is my personal portfolio and blog template. It allows you to create blog po
 ## Installation
 
 1. Clone the repository to your local machine.
-2. Install the necessary dependencies by running `yarn install`.
+2. Install the necessary dependencies by running `bun install`.
 3. Customize the site's content and configuration files to reflect your personal information and preferences.
 4. Deploy the site, according to [Astro's documentation](https://docs.astro.build/en/guides/deploy/), to your hosting provider of choice.
 
