@@ -1,18 +1,19 @@
 ---
-import About from "../components/About.svelte";
-import Navbar from "../components/Navbar.svelte";
-import Popup from "../components/Popup.svelte";
-import Projects from "../components/Projects.svelte";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import LatestBlogPost from "../components/LatestBlogPost.svelte";
+import About from '../components/About.astro';
+import Navbar from '../components/Navbar.astro';
+import Popup from '../components/Popup.astro';
+import Projects from '../components/Projects.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LatestBlogPost from '../components/LatestBlogPost.astro';
 
-const allPosts = await Astro.glob("./blog/*.md");
+const allPosts = await Astro.glob('./blog/*.md');
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 const orderedPosts = nonDraftPosts.sort((a, b) => {
   const aDate = new Date(a.frontmatter.pubDate);
   const bDate = new Date(b.frontmatter.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
+const popupPost = orderedPosts.find((post) => post.frontmatter.popup);
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
@@ -20,9 +21,5 @@ const orderedPosts = nonDraftPosts.sort((a, b) => {
   <About />
   <LatestBlogPost post={orderedPosts[0]} />
   <Projects />
-  <Popup
-    text="👨‍💻 Currently looking for entry level positions"
-    href="/blog/internships"
-    client:load
-  />
+  {popupPost && <Popup text={popupPost.frontmatter.description} href={popupPost.url} />}
 </BaseLayout>

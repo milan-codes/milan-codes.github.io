@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Navbar from "../../components/Navbar.svelte";
-import BlogPostCard from "../../components/BlogPostCard.svelte";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../blog/*.md");
+  const allPosts = await Astro.glob('../blog/*.md');
   const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
   const uniqueTags = new Set();
   nonDraftPosts.forEach((post) => {
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const allPosts = await Astro.glob("../blog/*.md");
+const allPosts = await Astro.glob('../blog/*.md');
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 const taggedPosts = nonDraftPosts.filter((post) => post.frontmatter.tags.includes(tag));
 ---

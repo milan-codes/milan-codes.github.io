@@ -1,0 +1,16 @@
+---
+const { tags } = Astro.props;
+---
+
+<div>
+  <h1 class="my-8 text-gray-900 dark:text-gray-100 mb-2 tracking-wider">Tags</h1>
+  <ul class="flex flex-wrap">
+    {
+      tags.map((tag: any) => (
+        <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm font-medium hover:underline">
+          <a href={`/tags/${tag}`}>{`#${tag}`}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
