@@ -27,7 +27,7 @@ This is my personal portfolio and blog template. It allows you to create blog po
 ### Displaying Math Expressions
 
 - To display math expressions using KaTeX, wrap the LaTeX code within `$$` symbols in your Markdown files.
-   Example: `$$E = mc^2$$`
+  Example: `$$E = mc^2$$`
 - Note that the displayed formulas might be too large for their containers. This might make the blog post's page unresponsive on certain devices. To avoid this, wrap the given formula in a `<div class="overflow-x-scroll"> ... </div>` container. You can see examples of this in the blog posts in this repository.
 
 ### Analytics Integration with Plausible

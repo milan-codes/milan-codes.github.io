@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Tags from '../../components/Tags.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Tags from "../../components/Tags.astro";
 
-const allPosts = await Astro.glob('../blog/*.md');
+const allPosts = await Astro.glob("../blog/*.md");
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 const uniqueTags = new Set<string>();
 nonDraftPosts.forEach((post) => {

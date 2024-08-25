@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: 'Internships and entry level positions'
+title: "Internships and entry level positions"
 pubDate: 2023-07-03
-description: 'Seeking challenging internships and entry-level positions to apply and enhance my coding skills'
-tags: ['internships', 'work']
+description: "Seeking challenging internships and entry-level positions to apply and enhance my coding skills"
+tags: ["internships", "work"]
 draft: true
 popup: true
 ---

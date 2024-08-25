@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: 'A brief introduction to Big-O'
+title: "A brief introduction to Big-O"
 pubDate: 2023-07-04
-description: 'What do we mean by efficient algorithms? How does the runtime of an algorithm grow as its input size grows?'
-tags: ['big-o', 'complexity-analysis']
+description: "What do we mean by efficient algorithms? How does the runtime of an algorithm grow as its input size grows?"
+tags: ["big-o", "complexity-analysis"]
 ---
 
 # Table Of Contents
