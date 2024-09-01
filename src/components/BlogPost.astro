@@ -20,7 +20,7 @@ const { frontmatter } = Astro.props;
   </div>
   <ul class="flex flex-wrap my-8">
     {
-      frontmatter.tags.map((tag: any) => (
+      frontmatter.tags.map((tag: unknown) => (
         <li class="text-sm text-gray-400 dark:text-gray-600 mr-3 hover:underline">
           <a href={`/tags/${tag}`}>{`#${tag}`}</a>
         </li>

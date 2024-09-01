@@ -34,7 +34,7 @@ const { post, containerStyleOverride } = Astro.props;
       {post.frontmatter.minutesRead}
     </li>
     {
-      post.frontmatter.tags.map((tag: any) => (
+      post.frontmatter.tags.map((tag: unknown) => (
         <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm font-medium hover:underline">
           <a href={`/tags/${tag}`}>{`#${tag}`}</a>
         </li>

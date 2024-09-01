@@ -8,7 +8,7 @@ const { tags } = Astro.props;
   </h1>
   <ul class="flex flex-wrap">
     {
-      tags.map((tag: any) => (
+      tags.map((tag: unknown) => (
         <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm font-medium hover:underline">
           <a href={`/tags/${tag}`}>{`#${tag}`}</a>
         </li>
