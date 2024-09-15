@@ -38,4 +38,7 @@ export default [
       parser: typescriptParser,
     },
   },
+  {
+    ignores: [".astro/**"],
+  },
 ];
