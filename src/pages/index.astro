@@ -5,15 +5,15 @@ import Popup from "../components/Popup.astro";
 import Projects from "../components/Projects.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LatestBlogPost from "../components/LatestBlogPost.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = await Astro.glob("./blog/*.md");
-const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
-const orderedPosts = nonDraftPosts.sort((a, b) => {
-  const aDate = new Date(a.frontmatter.pubDate);
-  const bDate = new Date(b.frontmatter.pubDate);
+const posts = await getCollection("blog", ({ data }) => data.draft !== true);
+const orderedPosts = posts.sort((a, b) => {
+  const aDate = new Date(a.data.pubDate);
+  const bDate = new Date(b.data.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
-const popupPost = orderedPosts.find((post) => post.frontmatter.popup);
+const announcements = await getCollection("announcements");
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
@@ -22,8 +22,12 @@ const popupPost = orderedPosts.find((post) => post.frontmatter.popup);
   <LatestBlogPost post={orderedPosts[0]} />
   <Projects />
   {
-    popupPost && (
-      <Popup text={popupPost.frontmatter.description} href={popupPost.url} />
-    )
+    !!announcements.length &&
+      announcements.map((announcement) => (
+        <Popup
+          text={announcement.data.description}
+          href={`/announcement/${announcement.slug}`}
+        />
+      ))
   }
 </BaseLayout>

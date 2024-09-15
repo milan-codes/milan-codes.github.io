@@ -2,18 +2,13 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Tags from "../../components/Tags.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = await Astro.glob("../blog/*.md");
-const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
-const uniqueTags = new Set<string>();
-nonDraftPosts.forEach((post) => {
-  post.frontmatter.tags.forEach((tag: string) => {
-    uniqueTags.add(tag);
-  });
-});
+const allPosts = await getCollection("blog");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="Tags">
   <Navbar />
-  <Tags tags={Array.from(uniqueTags)} />
+  <Tags tags={tags} />
 </BaseLayout>

@@ -1,18 +1,24 @@
 ---
-import { formattedPublishDate } from "../utils";
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils";
 
+interface Props {
+  post: CollectionEntry<"blog">;
+  containerStyleOverride?: string;
+}
 const { post, containerStyleOverride } = Astro.props;
+const { remarkPluginFrontmatter } = await post.render();
 ---
 
 <div class={containerStyleOverride ?? "my-8"}>
   <p class="text-gray-400 dark:text-gray-600 text-sm">
-    {formattedPublishDate(post.frontmatter.pubDate)}
+    {formatDate(post.data.pubDate)}
   </p>
   <a
     class="inline-flex items-center rounded-lg text-gray-900 dark:text-gray-100 hover:underline"
-    href={post.url}
+    href={`/blog/${post.slug}`}
   >
-    {post.frontmatter.title}
+    {post.data.title}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -28,13 +34,13 @@ const { post, containerStyleOverride } = Astro.props;
         points="7 7 17 7 17 17"></polyline></svg
     >
   </a>
-  <p class="text-gray-600 dark:text-gray-400">{post.frontmatter.description}</p>
+  <p class="text-gray-600 dark:text-gray-400">{post.data.description}</p>
   <ul class="flex flex-wrap">
     <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm">
-      {post.frontmatter.minutesRead}
+      {remarkPluginFrontmatter.readingTime}
     </li>
     {
-      post.frontmatter.tags.map((tag: unknown) => (
+      post.data.tags.map((tag: unknown) => (
         <li class="mr-3 text-gray-400 dark:text-gray-600 text-sm font-medium hover:underline">
           <a href={`/tags/${tag}`}>{`#${tag}`}</a>
         </li>

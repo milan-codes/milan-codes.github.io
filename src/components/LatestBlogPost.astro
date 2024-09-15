@@ -1,6 +1,10 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BlogPostCard from "./BlogPostCard.astro";
 
+interface Props {
+  post: CollectionEntry<"blog">;
+}
 const { post } = Astro.props;
 ---
 
