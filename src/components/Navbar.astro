@@ -1,46 +1,26 @@
+---
+import ArrowUpRight from "./ArrowUpRight.astro";
+---
+
 <nav aria-label="Navigation bar" class="py-4">
   <ul
-    class="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-100"
+    class="flex flex-col gap-2 font-medium text-gray-900 dark:text-gray-100 lowercase"
   >
     <li>
-      <a
-        href="/"
-        class="inline-flex px-3 py-1 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-900 font-semibold"
-      >
-        <span class="sr-only">Logo</span> 👋
-      </a>
+      <a class="py-2 hover:underline" href="/"> Home </a>
     </li>
     <li>
-      <a class="px-3 py-2 hover:underline" href="/"> Home </a>
-    </li>
-    <li>
-      <a class="px-3 py-2 hover:underline" href="/blog"> Blog </a>
-    </li>
-    <li>
-      <a class="px-3 py-2 hover:underline" href="/tags"> Tags </a>
+      <a class="py-2 hover:underline" href="/blog"> Posts </a>
     </li>
     <li>
       <a
-        class="inline-flex items-center pl-2 hover:underline"
+        class="inline-flex items-center hover:underline"
         href="https://github.com/milan-codes"
         target="_blank"
         rel="noreferrer"
       >
         GitHub
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="ml-1 h-4 w-4"
-          ><line x1="7" y1="17" x2="17" y2="7"></line><polyline
-            points="7 7 17 7 17 17"></polyline></svg
-        >
+        <ArrowUpRight />
       </a>
     </li>
   </ul>

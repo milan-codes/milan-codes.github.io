@@ -20,10 +20,14 @@ const announcements = await getCollection(
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
-  <Navbar />
-  <About />
-  <LatestBlogPost post={orderedPosts[0]} />
-  <Projects />
+  <div class="flex gap-8">
+    <Navbar />
+    <div>
+      <About />
+      <LatestBlogPost post={orderedPosts[0]} />
+      <Projects />
+    </div>
+  </div>
   {
     !!announcements.length &&
       announcements.map((announcement) => (
