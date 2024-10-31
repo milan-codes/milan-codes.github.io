@@ -49,7 +49,7 @@ def linearSearch(arr, x):
 ```
 
 Using the code given above, I got the following results:
-![Linear search runtime](/assets/040723-big-o/linearSearchRuntime.png)
+![Linear search runtime](../../assets/040723-big-o/linearSearchRuntime.png)
 
 As you can see in the diagram, the bigger the input size was, the longer it took to find the element we're looking for. The runtime grew proportionally with respect to the input size. Below is some of the data I used to create this chart. In the first column, you see the size of the array, which the algorithm was executed on, and in the second, the time the execution required in milliseconds:
 
@@ -78,7 +78,7 @@ The initial search region is the entire array, meaning if the target exists, it 
 5. If it is smaller than the element, the new search region becomes the lower (or left) half of the array — by setting _upper bound_ to _mid - 1_.
 
 This process is then repeated until a match is found or the search terminates as unsuccessful. Here's a visualisation of this procedure:
-![Binary search demo](/assets/040723-big-o/binarySearchDemo.png)
+![Binary search demo](../../assets/040723-big-o/binarySearchDemo.png)
 
 Binary search implemented in Python:
 
@@ -99,7 +99,7 @@ def binarySearch(arr, x):
 ```
 
 Now let's take a look at its runtime, just like we did with linear search:
-![Binary search runtime](/assets/040723-big-o/binarySearchRuntime.png)
+![Binary search runtime](../../assets/040723-big-o/binarySearchRuntime.png)
 
 You may have already noticed by looking at the y-axis that how much faster binary search is. It peaks a little bit above 0.1 ms — in comparison, linear search reached 250 ms with bigger sized arrays on my computer. Though, the most important difference is that the linear pattern is gone. This is replaced by a logarithmic one. That is because with each iteration, the algorithm halves the search region. You start with $n$ elements, then you get to $\frac{n}{2}$, then $\frac{n}{4}$ and so on, until you get to a problem the size of 1. This process can be described the following way:
 
@@ -110,7 +110,7 @@ $$
 The question is, how many times does the algorithm have to divide $n$ by 2 to get to 1? If we solve $\frac{n}{2^x} = 1$ for $x$, we get $x = \log_2 n$. Thus, we say that binary search runs in $O(\log n)$
 
 Below is a list of common functions programmers encounter when they analyse their algorithms, from slowest to fastest growing:
-![Algorithm growth rates](/assets/040723-big-o/algorithm-growth-rates.png)
+![Algorithm growth rates](../../assets/040723-big-o/algorithm-growth-rates.png)
 
 # Mathematically
 
@@ -196,7 +196,7 @@ $$
 </div>
 
 This can also be visualised if we graph the two function:
-![Big O example 1](/assets/040723-big-o/big-o-example1.png)
+![Big O example 1](../../assets/040723-big-o/big-o-example1.png)
 
 ### How to get the Big O of any function?
 
@@ -282,7 +282,7 @@ $$
 </div>
 
 Visualised:
-![Big Omega example 1](/assets/040723-big-o/big-omega-example1.png)
+![Big Omega example 1](../../assets/040723-big-o/big-omega-example1.png)
 
 ### How to get the Big Omega of any function?
 
@@ -351,7 +351,7 @@ Which reads as: $f(n)$ is big $\Theta$ of $g(n)$ if and only if there exist posi
 **Example:**
 
 Previously, we saw that for $f(n) = 2n +10$, $f(n)$ is $O(n)$ and also $\Omega(n)$. Thus, we can say that $f(n)$ is $\Theta(n)$ - and as you can see $f(n)$ is "sandwiched" between $g(n)$:
-![Big Theta example 1](/assets/040723-big-o/big-theta-example1.png)
+![Big Theta example 1](../../assets/040723-big-o/big-theta-example1.png)
 
 However, if you want to show how well an algorithm runs, and big $\Theta$ is unachievable, then the next best thing to use is big $O$.
 
