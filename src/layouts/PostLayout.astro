@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-  post: CollectionEntry<"blog"> | CollectionEntry<"announcements">;
+  post: CollectionEntry<"blog">;
 }
 const { post } = Astro.props;
 ---
