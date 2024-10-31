@@ -13,7 +13,10 @@ const orderedPosts = posts.sort((a, b) => {
   const bDate = new Date(b.data.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
-const announcements = await getCollection("announcements");
+const announcements = await getCollection(
+  "announcements",
+  ({ data }) => data.show === true,
+);
 ---
 
 <BaseLayout title="Milán Herke - Software engineer">
