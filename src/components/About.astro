@@ -1,8 +1,14 @@
+---
+import { Image } from "astro:assets";
+import memoji from "../assets/memoji-mac.png";
+---
+
 <div>
   <div class="flex my-8">
-    <img
+    <Image
       alt="Milán Herke"
-      src="/memoji-mac.png"
+      src={memoji}
+      loading="eager"
       class="h-16 w-16 rounded-lg object-cover mr-4"
     />
     <div>
