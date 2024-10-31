@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import AnnouncementLayout from "../../layouts/AnnouncementLayout.astro";
+
+export async function getStaticPaths() {
+  const announcements = await getCollection("announcements");
+  return announcements.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<AnnouncementLayout announcement={entry}>
+  <Content />
+</AnnouncementLayout>

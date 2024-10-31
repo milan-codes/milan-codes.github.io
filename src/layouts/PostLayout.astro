@@ -1,11 +1,16 @@
 ---
-import BlogPost from '../components/BlogPost.astro';
-import Navbar from '../components/Navbar.astro';
-import BaseLayout from './BaseLayout.astro';
-const { frontmatter } = Astro.props;
+import type { CollectionEntry } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+import Navbar from "../components/Navbar.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+const { post } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title}>
+<BaseLayout title={post.data.title}>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
@@ -13,7 +18,7 @@ const { frontmatter } = Astro.props;
     crossorigin="anonymous"
   />
   <Navbar />
-  <BlogPost frontmatter={frontmatter}>
+  <BlogPost post={post}>
     <slot />
   </BlogPost>
 </BaseLayout>

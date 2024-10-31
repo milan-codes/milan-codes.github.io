@@ -1,12 +1,13 @@
 ---
-import BlogPostCard from '../../components/BlogPostCard.astro';
-import Navbar from '../../components/Navbar.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-const allPosts = await Astro.glob('./*.md');
-const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
-const orderedPosts = nonDraftPosts.sort((a, b) => {
-  const aDate = new Date(a.frontmatter.pubDate);
-  const bDate = new Date(b.frontmatter.pubDate);
+import { getCollection } from "astro:content";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+import Navbar from "../../components/Navbar.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getCollection("blog", ({ data }) => data.draft !== true);
+const orderedPosts = posts.sort((a, b) => {
+  const aDate = new Date(a.data.pubDate);
+  const bDate = new Date(b.data.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
 ---

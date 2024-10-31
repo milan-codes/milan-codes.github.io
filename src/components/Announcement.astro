@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  announcement: CollectionEntry<"announcements">;
+}
+const { announcement } = Astro.props;
+---
+
+<div>
+  <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">
+    {announcement.data.title}
+  </h1>
+  <h1 class="text-gray-600 dark:text-gray-400">
+    {announcement.data.description}
+  </h1>
+  <div class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8">
+    <slot />
+  </div>
+</div>

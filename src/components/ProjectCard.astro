@@ -21,15 +21,18 @@ const { name, description, link, tags } = Astro.props;
       stroke-linecap="round"
       stroke-linejoin="round"
       class="ml-1 h-4 w-4"
-      ><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg
+      ><line x1="7" y1="17" x2="17" y2="7"></line><polyline
+        points="7 7 17 7 17 17"></polyline></svg
     >
   </a>
   <div>
     <p class="text-gray-600 dark:text-gray-400">{description}</p>
     <ul class="flex flex-wrap">
       {
-        tags.map((tag: any) => (
-          <li class="text-gray-400 dark:text-gray-600 text-sm font-medium">{tag + '/'}</li>
+        tags.map((tag: unknown) => (
+          <li class="text-gray-400 dark:text-gray-600 text-sm font-medium">
+            {tag + "/"}
+          </li>
         ))
       }
     </ul>
