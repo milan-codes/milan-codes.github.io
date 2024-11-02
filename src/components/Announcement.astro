@@ -8,13 +8,13 @@ const { announcement } = Astro.props;
 ---
 
 <div>
-  <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">
+  <h1 class="text-xl tracking-wider text-gray-900 dark:text-gray-100">
     {announcement.data.title}
   </h1>
   <h1 class="text-gray-600 dark:text-gray-400">
     {announcement.data.description}
   </h1>
-  <div class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8">
+  <div class="prose my-8 text-gray-600 dark:prose-invert dark:text-gray-400">
     <slot />
   </div>
 </div>

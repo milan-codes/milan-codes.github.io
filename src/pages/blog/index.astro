@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BlogPostCard from "../../components/BlogPostCard.astro";
 import Navbar from "../../components/Navbar.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tags from "../../components/Tags.astro";
 
 const posts = await getCollection("blog", ({ data }) => data.draft !== true);
 const orderedPosts = posts.sort((a, b) => {
@@ -10,9 +11,12 @@ const orderedPosts = posts.sort((a, b) => {
   const bDate = new Date(b.data.pubDate);
   return bDate.valueOf() - aDate.valueOf();
 });
+const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="Milán Herke - Blog">
   <Navbar />
+  <h1 class="mb-1 mt-4 lowercase text-gray-900 dark:text-gray-100">Posts</h1>
+  <Tags tags={tags} />
   {orderedPosts.map((post) => <BlogPostCard post={post} />)}
 </BaseLayout>

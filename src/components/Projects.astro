@@ -1,12 +1,19 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 
-const projects = [
+export type Project = {
+  name: string;
+  description: string;
+  link: string;
+  tags: string[];
+};
+
+const projects: Project[] = [
   {
     name: "Personal blog",
     description: "The source code of this site",
     link: "https://github.com/milan-codes/milan-codes.github.io",
-    tags: ["Astro", "Svelte", "Tailwind"],
+    tags: ["Astro", "Tailwind"],
   },
   {
     name: "The Briefing Room",
@@ -37,7 +44,7 @@ const projects = [
 ];
 ---
 
-<div class="my-16">
-  <h1 class="text-gray-900 dark:text-gray-100 mb-2 tracking-wider">Projects</h1>
-  {projects.map((project, index) => <ProjectCard key={index} {...project} />)}
+<div class="my-8">
+  <h1 class="lowercase text-gray-900 dark:text-gray-100">Projects</h1>
+  {projects.map((project) => <ProjectCard project={project} />)}
 </div>
