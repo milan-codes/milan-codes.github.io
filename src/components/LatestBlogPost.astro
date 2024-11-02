@@ -8,9 +8,10 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<div class="my-4 lowercase">
-  <a href="/blog" class="text-gray-900 hover:underline dark:text-gray-100"
-    >posts</a
+<div class="my-4">
+  <a
+    href="/blog"
+    class="lowercase text-gray-900 hover:underline dark:text-gray-100">posts</a
   >
   <BlogPostCard post={post} />
 </div>
