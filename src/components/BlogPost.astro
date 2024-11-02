@@ -10,10 +10,10 @@ const { remarkPluginFrontmatter } = await post.render();
 ---
 
 <div>
-  <h1 class="text-sm text-gray-400 dark:text-gray-600 mt-8">
+  <h1 class="mt-8 text-sm text-gray-400 dark:text-gray-600">
     {formatDate(post.data.pubDate)}
   </h1>
-  <h1 class="text-xl text-gray-900 dark:text-gray-100 tracking-wider">
+  <h1 class="text-xl tracking-wider text-gray-900 dark:text-gray-100">
     {post.data.title}
   </h1>
   <h1 class="text-gray-600 dark:text-gray-400">{post.data.description}</h1>
@@ -21,14 +21,14 @@ const { remarkPluginFrontmatter } = await post.render();
     {remarkPluginFrontmatter.readingTime}
   </h1>
   <div
-    class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8 max-w-none"
+    class="prose my-8 max-w-none text-gray-600 dark:prose-invert dark:text-gray-400"
   >
     <slot />
   </div>
-  <ul class="flex flex-wrap my-8">
+  <ul class="my-8 flex flex-wrap">
     {
       post.data.tags.map((tag: unknown) => (
-        <li class="text-sm text-gray-400 dark:text-gray-600 mr-3 hover:underline">
+        <li class="mr-3 text-sm text-gray-400 hover:underline dark:text-gray-600">
           <a href={`/tags/${tag}`}>{`#${tag}`}</a>
         </li>
       ))
@@ -36,7 +36,7 @@ const { remarkPluginFrontmatter } = await post.render();
   </ul>
   <hr />
   <div
-    class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8 max-w-none"
+    class="prose my-8 max-w-none text-gray-600 dark:prose-invert dark:text-gray-400"
   >
     If you have any questions or comments, or you would like to point out any
     errors in any of the blog posts, please reach out to me at <a

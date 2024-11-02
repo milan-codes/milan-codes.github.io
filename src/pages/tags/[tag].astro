@@ -25,7 +25,7 @@ const allPosts = await getCollection(
 
 <BaseLayout title="Milán Herke - Blog">
   <Navbar />
-  <h1 class="my-8 text-gray-900 dark:text-gray-100 mb-2 tracking-wider">
+  <h1 class="my-8 mb-2 tracking-wider text-gray-900 dark:text-gray-100">
     Posts with {tag} tag
   </h1>
   {allPosts.map((post) => <BlogPostCard post={post} />)}

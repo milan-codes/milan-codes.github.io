@@ -9,7 +9,7 @@ const { post } = Astro.props;
 ---
 
 <div
-  class="flex items-center justify-between text-gray-600 dark:text-gray-400 my-2"
+  class="my-2 flex items-center justify-between text-gray-600 dark:text-gray-400"
 >
   <a class="hover:underline" href={`/blog/${post.slug}`}>
     {post.data.title}

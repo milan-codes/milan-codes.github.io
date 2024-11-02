@@ -3,7 +3,7 @@ const { text, href } = Astro.props;
 ---
 
 <div
-  class="sticky bottom-4 z-50 flex items-center justify-between gap-4 rounded-lg dark:bg-gray-100 bg-gray-900 px-5 py-3 dark:text-gray-900 text-gray-100"
+  class="sticky bottom-4 z-50 flex items-center justify-between gap-4 rounded-lg bg-gray-900 px-5 py-3 text-gray-100 dark:bg-gray-100 dark:text-gray-900"
 >
   👋
   <a href={href} class="text-sm font-medium hover:opacity-75">
@@ -11,7 +11,7 @@ const { text, href } = Astro.props;
   </a>
 
   <button
-    class="rounded bg-black/50 dark:bg-black/10 p-1 hover:bg-black/30 dark:hover:bg-black/20"
+    class="rounded bg-black/50 p-1 hover:bg-black/30 dark:bg-black/10 dark:hover:bg-black/20"
     id="cancelPopupButton"
   >
     <span class="sr-only">Close</span>
