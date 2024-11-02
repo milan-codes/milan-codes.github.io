@@ -20,7 +20,9 @@ const { remarkPluginFrontmatter } = await post.render();
   <h1 class="mt-1 text-sm text-gray-400 dark:text-gray-600">
     {remarkPluginFrontmatter.readingTime}
   </h1>
-  <div class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8">
+  <div
+    class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8 max-w-none"
+  >
     <slot />
   </div>
   <ul class="flex flex-wrap my-8">
@@ -33,7 +35,9 @@ const { remarkPluginFrontmatter } = await post.render();
     }
   </ul>
   <hr />
-  <div class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8">
+  <div
+    class="prose dark:prose-invert text-gray-600 dark:text-gray-400 my-8 max-w-none"
+  >
     If you have any questions or comments, or you would like to point out any
     errors in any of the blog posts, please reach out to me at <a
       href="mailto:milanherke@protonmail.com">milanherke@protonmail.com</a
