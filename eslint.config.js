@@ -39,6 +39,6 @@ export default [
     },
   },
   {
-    ignores: [".astro/**"],
+    ignores: [".astro/**", "dist/**"],
   },
 ];
