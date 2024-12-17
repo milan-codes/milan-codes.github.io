@@ -11,12 +11,16 @@ This is my personal portfolio and blog template. It allows you to create blog po
 - Plausible Analytics: Analytics integration with Plausible allows you to track visitor statistics and gain insights into the site's performance.
 - Light and Dark Theme: The site includes both light and dark themes, and the current theme is set based on system settings.
 
-## Installation
+## Development
 
-1. Clone the repository to your local machine.
-2. Install the necessary dependencies by running `bun install`.
-3. Customize the site's content and configuration files to reflect your personal information and preferences.
-4. Deploy the site, according to [Astro's documentation](https://docs.astro.build/en/guides/deploy/), to your hosting provider of choice.
+This repository includes a Nix Flakes-based development environment. If Nix is configured on your system, run `nix develop` to enter the development environment. Optionally, [direnv](https://github.com/direnv/direnv) can automatically do this for you, when you change into the directory.
+
+1. Install the necessary dependencies by running `bun install`.
+2. Start the development server by running `bun dev`.
+
+## Deployment
+
+This repository contains a workflow that automatically deploys to GitHub Pages, for other options refer to [Astro's deployment guide](https://docs.astro.build/en/guides/deploy/).
 
 ## Usage
 
