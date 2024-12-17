@@ -12,12 +12,14 @@ This is my personal portfolio and blog template. It allows you to create blog po
 - Light and Dark Theme: The site includes both light and dark themes, and the current theme is set based on system settings.
 
 ## Development
+
 This repository includes a Nix Flakes-based development environment. If Nix is configured on your system, run `nix develop` to enter the development environment. Optionally, [direnv](https://github.com/direnv/direnv) can automatically do this for you, when you change into the directory.
 
 1. Install the necessary dependencies by running `bun install`.
 2. Start the development server by running `bun dev`.
 
 ## Deployment
+
 This repository contains a workflow that automatically deploys to GitHub Pages, for other options refer to [Astro's deployment guide](https://docs.astro.build/en/guides/deploy/).
 
 ## Usage
