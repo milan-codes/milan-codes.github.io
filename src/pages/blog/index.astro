@@ -16,7 +16,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 <BaseLayout title="Milán Herke - Blog">
   <Navbar />
-  <h1 class="mb-1 mt-4 lowercase text-gray-900 dark:text-gray-100">Posts</h1>
+  <h1 class="mt-4 mb-1 text-gray-900 lowercase dark:text-gray-100">Posts</h1>
   <Tags tags={tags} />
   {orderedPosts.map((post) => <BlogPostCard post={post} />)}
 </BaseLayout>
