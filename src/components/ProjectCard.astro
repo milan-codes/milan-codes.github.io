@@ -10,7 +10,9 @@ const { project } = Astro.props;
 const { name, tags, link } = project;
 ---
 
-<div class="my-2 flex justify-between text-gray-600 dark:text-gray-400">
+<div
+  class="my-2 flex flex-col justify-between text-gray-600 md:flex-row dark:text-gray-400"
+>
   <a
     class="inline-flex items-center hover:underline"
     href={link}
