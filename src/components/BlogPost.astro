@@ -1,12 +1,13 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../utils";
+import { render } from "astro:content";
 
 interface Props {
   post: CollectionEntry<"blog">;
 }
 const { post } = Astro.props;
-const { remarkPluginFrontmatter } = await post.render();
+const { remarkPluginFrontmatter } = await render(post);
 ---
 
 <div>
@@ -21,7 +22,7 @@ const { remarkPluginFrontmatter } = await post.render();
     {remarkPluginFrontmatter.readingTime}
   </h1>
   <div
-    class="prose my-8 max-w-none text-gray-600 dark:prose-invert dark:text-gray-400"
+    class="prose dark:prose-invert my-8 max-w-none text-gray-600 dark:text-gray-400"
   >
     <slot />
   </div>
@@ -36,7 +37,7 @@ const { remarkPluginFrontmatter } = await post.render();
   </ul>
   <hr />
   <div
-    class="prose my-8 max-w-none text-gray-600 dark:prose-invert dark:text-gray-400"
+    class="prose dark:prose-invert my-8 max-w-none text-gray-600 dark:text-gray-400"
   >
     If you have any questions or comments, or you would like to point out any
     errors in any of the blog posts, please reach out to me at <a

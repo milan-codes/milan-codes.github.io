@@ -11,7 +11,7 @@ const { post } = Astro.props;
 <div
   class="my-2 flex items-center justify-between text-gray-600 dark:text-gray-400"
 >
-  <a class="hover:underline" href={`/blog/${post.slug}`}>
+  <a class="hover:underline" href={`/blog/${post.id}`}>
     {post.data.title}
   </a>
   {formatDate(post.data.pubDate)}
