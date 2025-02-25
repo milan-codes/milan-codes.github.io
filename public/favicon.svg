@@ -1,13 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
-  <path fill="#000" d="M22.25 4h-8.5a1 1 0 0 0-.96.73l-5.54 19.4a.5.5 0 0 0 .62.62l5.05-1.44a2 2 0 0 0 1.38-1.4l3.22-11.66a.5.5 0 0 1 .96 0l3.22 11.67a2 2 0 0 0 1.38 1.39l5.05 1.44a.5.5 0 0 0 .62-.62l-5.54-19.4a1 1 0 0 0-.96-.73Z"/>
-  <path fill="url(#gradient)" d="M18 28a7.63 7.63 0 0 1-5-2c-1.4 2.1-.35 4.35.6 5.55.14.17.41.07.47-.15.44-1.8 2.93-1.22 2.93.6 0 2.28.87 3.4 1.72 3.81.34.16.59-.2.49-.56-.31-1.05-.29-2.46 1.29-3.25 3-1.5 3.17-4.83 2.5-6-.67.67-2.6 2-5 2Z"/>
-  <defs>
-    <linearGradient id="gradient" x1="16" x2="16" y1="32" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#000"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-	<style>
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
+<svg width="327" height="330" viewBox="0 0 327 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="18.6978" y="18.6976" width="92.0496" height="310.667" rx="46.0248" fill="#262626"/>
+<rect y="65.0889" width="92.0496" height="230.05" rx="46.0248" transform="rotate(-45 0 65.0889)" fill="#262626"/>
+<rect x="261.911" y="1.90735e-05" width="92.0496" height="230.05" rx="46.0248" transform="rotate(45 261.911 1.90735e-05)" fill="#262626"/>
+<circle cx="262.485" cy="65.4415" r="46.7439" fill="#FD600F"/>
+<circle cx="259.608" cy="180.504" r="46.7439" fill="#FD600F"/>
+<path d="M258.889 328.646C300.887 296.428 307.551 214.063 305.633 176.908H258.17C260.088 214.063 253.424 296.428 211.426 328.646H258.889Z" fill="#FD600F"/>
 </svg>

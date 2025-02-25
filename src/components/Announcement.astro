@@ -14,7 +14,7 @@ const { announcement } = Astro.props;
   <h1 class="text-gray-600 dark:text-gray-400">
     {announcement.data.description}
   </h1>
-  <div class="prose my-8 text-gray-600 dark:prose-invert dark:text-gray-400">
+  <div class="prose dark:prose-invert my-8 text-gray-600 dark:text-gray-400">
     <slot />
   </div>
 </div>

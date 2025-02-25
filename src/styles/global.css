@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "@fontsource-variable/roboto-mono";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Roboto Mono Variable", "sans-serif";
+}
